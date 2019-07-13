@@ -12,9 +12,9 @@ pipeline {
             }
         }
         stage('2.开始Maven构建项目') {
-            steps {
-                echo '部署服务器地址: http://20.79.15.136:8080'
-            }
+            def MvnHome = tool name: 'Maven3', type: 'maven'
+            def mvnCMD = "${MvnHome}/bin/mvn"
+            sh "${mvnCMD} clean package"
         }
         stage('3.开始部署项目.') {
             steps {
