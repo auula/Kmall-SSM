@@ -29,7 +29,7 @@ pipeline {
         }
         stage('3.Deploy Project') {
             steps {
-                sh "ssh ${REMOTE_HOST} < ./deploy.sh ${PRO_VERSIOM}"
+                sh "ssh ${REMOTE_HOST} < ./deploy.sh"
                 echo '部署服务器地址: http://20.79.15.136:8080/${Pro_Name}'
             }
         }

@@ -1,5 +1,5 @@
 #!/bin/bash
-version=$1
+version="kmall-0.0.1-SNAPSHOT"
 warName=${version}.war
 echo -e "\033[32m -----------------------------------------------------------------------------------------------\033[0m"
 echo -e "  [ \033[32mINFO\033[0m ]   deploy war to Tomcat ....."
