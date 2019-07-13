@@ -17,17 +17,13 @@ pipeline {
                 sh 'git --version'
             }
         }
-        stage('3.Git Clone') {
-           steps {
-                git([url: "${REPO_URL}")
-            }
-        }
-        stage('3.Build Project') {
+        
+        stage('2.Build Project') {
            steps {
                 sh "mvn clean test package"
             }
         }
-        stage('4.Deploy Project') {
+        stage('3.Deploy Project') {
             steps {
                 sh "ssh ${REMOTE_HOST} < deploy.sh"
                 echo '部署服务器地址: http://20.79.15.136:8080'
