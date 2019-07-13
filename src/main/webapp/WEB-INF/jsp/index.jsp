@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Kmall商城_dev</title>
+<title>Kmall商城</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=basePath%>/static/css/main.css">
 <link rel="stylesheet" type="text/css"
@@ -28,7 +28,7 @@
 			</p>
 			<div class="sn-quick-menu">
 				<div class="login">
-					<a href="login.html">登录</a>
+					<a href="login.html">去登录</a>
 				</div>
 				<div class="sp-cart">
 					<a href="shopcart.html">购物车</a><span>2</span>
