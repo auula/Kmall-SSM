@@ -7,12 +7,14 @@ echo -e "  [ \033[32mINFO\033[0m ]   start deploy war to tomcat....."
 echo -e "  [ \033[32mINFO\033[0m ]   this shell by YooDing Email:coding1618@gmail.com"
 echo -e "\033[32m -----------------------------------------------------------------------------------------------\033[0m"
 wget -c http://jenkins.codegc.me/${warName}
+rm -rf /root/apache-tomcat-9.0.19/webapps/ROOT
+mkdir /root/apache-tomcat-9.0.19/webapps/ROOT
 mv ./${warName} /root/apache-tomcat-9.0.19/webapps/ROOT
 cd /root/apache-tomcat-9.0.19/webapps/ROOT
 jar -xvf ${warName}
 rm -rf ${warName}
 sh /root/apache-tomcat-9.0.19/bin/shutdown.sh
-slepp 5
+sleep 5
 sh /root/apache-tomcat-9.0.19/bin/startup.sh
 echo -e "\033[32m -----------------------------------------------------------------------------------------------\033[0m"
 echo -e "  [ \033[32mINFO\033[0m ]   restart tomcat 20s...."
