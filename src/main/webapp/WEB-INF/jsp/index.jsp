@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Kmall商城</title>
+<title>Kmall商城_dev</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=basePath%>/static/css/main.css">
 <link rel="stylesheet" type="text/css"
