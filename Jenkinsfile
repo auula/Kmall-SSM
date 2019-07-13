@@ -1,5 +1,11 @@
 pipeline {
     agent any
+    environment {
+        REMOTE_HOST = "120.79.15.136"
+        REMOTE_USER = "root"
+        REPO_URL = "git@github.com:YooDing/Kmall-SSM.git"
+        BRANCH_NAME = "master"
+    }
     stages {
         stage('1.OS Info') {
             steps {
@@ -11,13 +17,19 @@ pipeline {
                 sh 'git --version'
             }
         }
-        stage('2.Build Project') {
+        stage('3.Git Clone') {
            steps {
-                sh "mvn clean package"
+                git([url: "${REPO_URL}", branch: "${BRANCH_NAME}"])
             }
         }
-        stage('3.Deploy Project') {
+        stage('3.Build Project') {
+           steps {
+                sh "mvn clean test package"
+            }
+        }
+        stage('4.Deploy Project') {
             steps {
+                sh "ssh ${REMOTE_HOST} < deploy.sh"
                 echo '部署服务器地址: http://20.79.15.136:8080'
             }
         }
