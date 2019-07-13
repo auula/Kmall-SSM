@@ -22,7 +22,7 @@ public class index {
 		return "index";
 	}
 	
-	@GetMapping("/test")
+	@GetMapping("/time")
 	@ResponseBody
 	public String time() {
 		return new Date().toLocaleString().toString();
