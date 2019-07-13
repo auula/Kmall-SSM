@@ -5,6 +5,8 @@ pipeline {
         REMOTE_USER = "root"
         REPO_URL = "git@github.com:YooDing/Kmall-SSM.git"
         BRANCH_NAME = "master"
+        PRO_VERSIOM= "kmall-0.0.1-SNAPSHOT"
+        Pro_Name= "kmall"
     }
     stages {
         stage('1.OS Info') {
@@ -21,12 +23,13 @@ pipeline {
         stage('2.Build Project') {
            steps {
                 sh "mvn clean test package"
+                sh "mv  /root/.jenkins/workspace/Kmall-SSM/target/${PRO_VERSIOM}.war /www/wwwroot/jenkins.codegc.me/"
             }
         }
         stage('3.Deploy Project') {
             steps {
-                sh "ssh ${REMOTE_HOST} < deploy.sh"
-                echo '部署服务器地址: http://20.79.15.136:8080'
+                sh "ssh ${REMOTE_HOST} < ./deploy.sh"
+                echo '部署服务器地址: http://20.79.15.136:8080/${Pro_Name}'
             }
         }
     }
