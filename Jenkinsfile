@@ -19,7 +19,7 @@ pipeline {
                 sh 'git --version'
             }
         }
-        
+		
         stage('2.Build Project') {
            steps {
                 sh "mvn clean test package"

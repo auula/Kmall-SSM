@@ -13,6 +13,7 @@ public class index {
 
 	@RequestMapping(method=RequestMethod.GET,value= {"/","index.html"})
 	public String indexView() {
+
 		logger.info("idnex.jsp");
 		return "index";
 	}
