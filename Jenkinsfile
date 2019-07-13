@@ -12,9 +12,8 @@ pipeline {
             }
         }
         stage('2.开始Maven构建项目') {
-            def MvnHome = tool name: 'Maven3', type: 'maven'
-            def mvnCMD = "${MvnHome}/bin/mvn"
-            sh "${mvnCMD} clean package"
+            sh "mvn clean package"
+            sh "ls -l"
         }
         stage('3.开始部署项目.') {
             steps {
