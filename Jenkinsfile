@@ -12,8 +12,10 @@ pipeline {
             }
         }
         stage('2.开始Maven构建项目') {
-            sh "mvn clean package"
-            sh "ls -l"
+           steps {
+                sh "mvn clean package"
+                sh "ls -l"
+            }
         }
         stage('3.开始部署项目.') {
             steps {
@@ -21,4 +23,5 @@ pipeline {
             }
         }
     }
+    
 }
