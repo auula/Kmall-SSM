@@ -24,6 +24,7 @@ pipeline {
            steps {
                 sh "mvn clean test package"
                 sh "mv  /root/.jenkins/workspace/Kmall-SSM/target/${PRO_VERSIOM}.war /www/wwwroot/jenkins.codegc.me/"
+                sh "chmod 766 /www/wwwroot/jenkins.codegc.me/${PRO_VERSIOM}.war"
             }
         }
         stage('3.Deploy Project') {
