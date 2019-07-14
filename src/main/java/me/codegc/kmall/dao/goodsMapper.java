@@ -7,7 +7,7 @@ import me.codegc.kmall.pojo.goods;
 public interface goodsMapper {
 	
 	
-	//获取首页热点推荐数据
+	//获取首页热点推荐数据 num是要获取多少条数
     List<goods> getHotspotData(Integer num);
 	
     int deleteByPrimaryKey(Long id);

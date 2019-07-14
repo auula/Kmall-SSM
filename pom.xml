@@ -36,9 +36,7 @@
 					<configurationFile>/Users/jdode/Documents/Kmall-SSM/src/main/resources/generatorConfig.xml</configurationFile>
 					<overwrite>true</overwrite>
 				</configuration>
-
 			</plugin>
-
 		</plugins>
 		<!--解决mybatis抛出xml查不到问题 -->
 		<resources>
@@ -55,7 +53,6 @@
 					<include>**/*.xml</include>
 					<!-- Invalid bound statement (not found) -->
 					<include>**/*.properties</include>
-
 					<include>**/mapper/**</include>
 				</includes>
 			</resource>

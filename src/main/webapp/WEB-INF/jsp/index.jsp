@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -42,7 +43,8 @@
 		<div class="headerLayout w1200">
 			<div class="headerCon">
 				<h1 class="mallLogo" style="margin-top: 20px;">
-					<a href="#" title="Kmall商城"> <img style="width: 130px;height: 48px;"
+					<a href="#" title="Kmall商城"> <img
+						style="width: 130px; height: 48px;"
 						src="https://i.loli.net/2019/07/08/5d22c114497c397275.png">
 					</a>
 				</h1>
@@ -83,23 +85,20 @@
 						<div class="layui-carousel" id="test10">
 							<div carousel-item="">
 								<div>
-									<img
-										src="https://i.loli.net/2019/07/07/5d21ea191597a55270.jpg">
+									<img src="https://i.loli.net/2019/07/07/5d21ea191597a55270.jpg">
 								</div>
 								<div>
-									<img
-										src="https://i.loli.net/2019/07/07/5d21e5385400260611.jpg">
+									<img src="https://i.loli.net/2019/07/07/5d21e5385400260611.jpg">
 								</div>
 								<div>
-									<img
-										src="https://i.loli.net/2019/07/07/5d21e6c1434bc13500.png">
+									<img src="https://i.loli.net/2019/07/07/5d21e6c1434bc13500.png">
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				
+
 
 
 			</div>
@@ -115,80 +114,28 @@
 							<div class="layui-carousel" id="test1">
 								<div carousel-item>
 									<div class="item-box">
-										<div class="item">
-											<a href="javascript:;"><img
-												src="<%=basePath%>/static/img/s_img2.jpg"></a>
-											<div class="title">宝宝五彩袜棉质舒服</div>
-											<div class="price">
-												<span>￥49.00</span>
-												<del>￥99.00</del>
+										<c:forEach items="${HOT}" var="hot" varStatus="i" begin="0" end="3">
+											<div class="item">
+												<a href="javascript:;"><img src="${hot.getImage()}"></a>
+												<div class="title">${hot.getTitle()}</div>
+												<div class="price">
+													<span>${hot.getTypeId()}</span>
+													<del>${hot.getPrice()}</del>
+												</div>
 											</div>
-										</div>
-										<div class="item">
-											<a href="javascript:;"><img
-												src="<%=basePath%>/static/img/s_img3.jpg"></a>
-											<div class="title">宝宝五彩袜棉质舒服</div>
-											<div class="price">
-												<span>￥49.00</span>
-												<del>￥99.00</del>
-											</div>
-										</div>
-										<div class="item">
-											<a href="javascript:;"><img
-												src="<%=basePath%>/static/img/s_img4.jpg"></a>
-											<div class="title">宝宝五彩袜棉质舒服</div>
-											<div class="price">
-												<span>￥49.00</span>
-												<del>￥99.00</del>
-											</div>
-										</div>
-										<div class="item">
-											<a href="javascript:;"><img
-												src="<%=basePath%>/static/img/s_img5.jpg"></a>
-											<div class="title">宝宝五彩袜棉质舒服</div>
-											<div class="price">
-												<span>￥49.00</span>
-												<del>￥99.00</del>
-											</div>
-										</div>
+										</c:forEach>
 									</div>
 									<div class="item-box">
-										<div class="item">
-											<a href="javascript:;"><img
-												src="<%=basePath%>/static/img/s_img2.jpg"></a>
-											<div class="title">宝宝五彩袜棉质舒服</div>
-											<div class="price">
-												<span>￥49.00</span>
-												<del>￥99.00</del>
+										<c:forEach items="${HOT}" var="hot" varStatus="i" begin="4" end="7">
+											<div class="item">
+												<a href="javascript:;"><img src="${hot.getImage()}"></a>
+												<div class="title">${hot.getTitle()}</div>
+												<div class="price">
+													<span>${hot.getTypeId()}</span>
+													<del>${hot.getPrice()}</del>
+												</div>
 											</div>
-										</div>
-										<div class="item">
-											<a href="javascript:;"><img
-												src="<%=basePath%>/static/img/s_img3.jpg"></a>
-											<div class="title">宝宝五彩袜棉质舒服</div>
-											<div class="price">
-												<span>￥49.00</span>
-												<del>￥99.00</del>
-											</div>
-										</div>
-										<div class="item">
-											<a href="javascript:;"><img
-												src="<%=basePath%>/static/img/s_img4.jpg"></a>
-											<div class="title">宝宝五彩袜棉质舒服</div>
-											<div class="price">
-												<span>￥49.00</span>
-												<del>￥99.00</del>
-											</div>
-										</div>
-										<div class="item">
-											<a href="javascript:;"><img
-												src="<%=basePath%>/static/img/s_img5.jpg"></a>
-											<div class="title">宝宝五彩袜棉质舒服</div>
-											<div class="price">
-												<span>￥49.00</span>
-												<del>￥99.00</del>
-											</div>
-										</div>
+										</c:forEach>
 									</div>
 								</div>
 							</div>
