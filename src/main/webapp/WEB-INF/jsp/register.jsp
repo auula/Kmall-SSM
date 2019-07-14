@@ -8,7 +8,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Kmall商城登录</title>
+  <title>Kmall商城注册</title>
 
   <link rel="stylesheet" type="text/css" href="<%=basePath%>/static/css/main.css">
   <link rel="stylesheet" type="text/css" href="<%=basePath%>/static/css/layui.css">
