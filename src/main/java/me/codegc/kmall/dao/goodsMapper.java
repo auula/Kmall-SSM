@@ -10,6 +10,9 @@ public interface goodsMapper {
 	//获取首页热点推荐数据 num是要获取多少条数
     List<goods> getHotspotData(Integer num);
 	
+    //获取首页推荐数据
+    List<goods> getRecommended(Integer num);
+    
     int deleteByPrimaryKey(Long id);
 
     int insert(goods record);

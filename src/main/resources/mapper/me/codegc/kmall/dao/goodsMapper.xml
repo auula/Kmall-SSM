@@ -37,6 +37,11 @@
 		ORDER BY RAND() LIMIT #{num}
 	</select>
 
+	<select id="getRecommended" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select * from t_goods
+		ORDER BY RAND() LIMIT #{num}
+	</select>
 
 	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
 		delete from

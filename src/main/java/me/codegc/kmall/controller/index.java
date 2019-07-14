@@ -33,6 +33,7 @@ public class index {
 	@RequestMapping(method = RequestMethod.GET, value = { "/", "index.html" })
 	public String indexView() {
 		request.setAttribute("HOT",gm.getHotspotData(8));
+		request.setAttribute("Rlist", gm.getRecommended(10));
 		logger.info("idnex.html");
 		return "index";
 	}
