@@ -34,8 +34,8 @@ public class index {
 	public String indexView() {
 		request.setAttribute("HOT",gm.getHotspotData(8));
 		request.setAttribute("Rlist", gm.getRecommended(10));
-		logger.info("idnex.html");
-		return "index";
+		logger.info("welcome.html");
+		return "welcome";
 	}
 
 	@GetMapping("/list")

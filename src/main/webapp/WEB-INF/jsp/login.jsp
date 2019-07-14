@@ -12,7 +12,7 @@
 
   <link rel="stylesheet" type="text/css" href="<%=basePath%>/static/css/main.css">
   <link rel="stylesheet" type="text/css" href="<%=basePath%>/static/css/layui.css">
-  <script type="text/javascript" src="<%=basePath%>/static/js/ayui.js"></script>
+  <script type="text/javascript" src="<%=basePath%>/static/js/layui.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 </head>

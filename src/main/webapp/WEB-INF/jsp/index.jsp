@@ -7,20 +7,7 @@
 			+ path;
 %>
 
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Kmall商城</title>
-<link rel="stylesheet" type="text/css"
-	href="<%=basePath%>/static/css/main.css">
-<link rel="stylesheet" type="text/css"
-	href="<%=basePath%>/static/css/layui.css">
-<script type="text/javascript" src="<%=basePath%>/static/js/layui.js"></script>
-<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-
-</head>
+<jsp:include page="./public/head.jsp"></jsp:include>
 <body id="list-cont">
 	<div class="site-nav-bg">
 		<div class="site-nav w1200">
@@ -114,9 +101,9 @@
 											end="3">
 											<div class="item">
 												<a href="javascript:;"><img src="${hot.getImage()}"></a>
-												<div class="title">${hot.getTitle()}</div>
-												<div class="price">
-													<span>${hot.getPrice()}</span>¥
+												<div class="title" style="text-align: center;">${hot.getTitle()}</div>
+												<div class="price" style="text-align: center;">
+													<span>¥${hot.getPrice()}</span>
 												</div>
 											</div>
 										</c:forEach>
@@ -126,9 +113,9 @@
 											end="7">
 											<div class="item">
 												<a href="javascript:;"><img src="${hot.getImage()}"></a>
-												<div class="title">${hot.getTitle()}</div>
-												<div class="price">
-													<span>${hot.getPrice()}</span>¥
+												<div class="title" style="text-align: center;">${hot.getTitle()}</div>
+												<div class="price" style="text-align: center;">
+													<span>¥${hot.getPrice()}</span>
 												</div>
 											</div>
 										</c:forEach>
@@ -145,22 +132,23 @@
 
 			<div class="product-list-box" id="product-list-box">
 				<div class="product-list-cont w1200">
-					<h4>更多推荐</h4>
+					<h4>最新推荐</h4>
 					<div class="product-item-box layui-clear">
 						<c:forEach items="${Rlist}" var="r" varStatus="i" begin="0"
 							end="9">
-						<div class="list-item">
-							<a href="javascript:;"><img style="width:160px;height: 160px;" src="${r.getImage()}"></a>
-							<p>${r.getTitle()}</p>
-							<span>￥${r.getPrice()}</span>
-						</div>
+							<div class="list-item">
+								<a href="javascript:;"><img
+									style="width: 160px; height: 160px;" src="${r.getImage()}"></a>
+								<p style="text-align: center;">${r.getTitle()}</p>
+								<span>￥${r.getPrice()}</span>
+							</div>
 						</c:forEach>
-						
-						
+
 					</div>
 				</div>
 			</div>
 		</div>
+
 
 	</div>
 
