@@ -36,11 +36,31 @@
 					<configurationFile>/Users/jdode/Documents/Kmall-SSM/src/main/resources/generatorConfig.xml</configurationFile>
 					<overwrite>true</overwrite>
 				</configuration>
-				
+
 			</plugin>
-			
+
 		</plugins>
-		
+		<!--解决mybatis抛出xml查不到问题 -->
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<!-- 此配置不可缺，否则mybatis的Mapper.xml将会丢失 -->
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.xml</include>
+					<!-- Invalid bound statement (not found) -->
+					<include>**/*.properties</include>
+
+					<include>**/mapper/**</include>
+				</includes>
+			</resource>
+		</resources>
+
 	</build>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -1,8 +1,15 @@
 package me.codegc.kmall.dao;
 
+import java.util.List;
+
 import me.codegc.kmall.pojo.goods;
 
 public interface goodsMapper {
+	
+	
+	//获取首页热点推荐数据
+    List<goods> getHotspotData(Integer num);
+	
     int deleteByPrimaryKey(Long id);
 
     int insert(goods record);
@@ -14,4 +21,7 @@ public interface goodsMapper {
     int updateByPrimaryKeySelective(goods record);
 
     int updateByPrimaryKey(goods record);
+    
+   
+    
 }
