@@ -5,8 +5,8 @@ pipeline {
         REMOTE_USER = "root"
         REPO_URL = "git@github.com:YooDing/Kmall-SSM.git"
         BRANCH_NAME = "master"
-        PRO_VERSIOM= "kmall-0.0.1-SNAPSHOT"
-        Pro_Name= "kmall"
+        PRO_VERSIOM= "Kmall-SSM-0.0.1-SNAPSHOT"
+        Pro_Name= "Kmall-SSM"
     }
     stages {
         stage('1.OS Info') {

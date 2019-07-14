@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>me.codegc.kmall</groupId>
-	<artifactId>kmall</artifactId>
+	<artifactId>Kmall-SSM</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>Kmall</name>
+	<name>Kmall-SSM</name>
 	<description>SSM开发的一个商品二手交易网站</description>
 	<build>
 		<plugins>
@@ -17,8 +17,30 @@
 					<source>1.8</source>
 					<target>1.8</target>
 				</configuration>
+				<!-- <version>3.3</version> -->
 			</plugin>
+			<!-- Mybatis逆向工程 这里是plugin 在xml最下面还有一个mybatis-generator-core -->
+			<plugin>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-maven-plugin</artifactId>
+				<version>1.3.2</version>
+				<dependencies>
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>5.1.35</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<!-- 配置文件的路径 -->
+					<configurationFile>/Users/jdode/Documents/Kmall-SSM/src/main/resources/generatorConfig.xml</configurationFile>
+					<overwrite>true</overwrite>
+				</configuration>
+				
+			</plugin>
+			
 		</plugins>
+		
 	</build>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -188,5 +210,12 @@
 			<artifactId>http-request</artifactId>
 			<version>5.6</version>
 		</dependency>
+		<!-- MyBatis 逆向工程 jar | MyBatis Generator -->
+		<dependency>
+			<groupId>org.mybatis.generator</groupId>
+			<artifactId>mybatis-generator-core</artifactId>
+			<version>1.3.2</version>
+		</dependency>
 	</dependencies>
+
 </project>
