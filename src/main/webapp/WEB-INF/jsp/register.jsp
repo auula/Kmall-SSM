@@ -25,7 +25,7 @@
         <a href="#">首页</a>
       </p>
       <div class="sn-quick-menu">
-        <div class="login"><a href="register.html">去注册</a></div>
+        <div class="login"><a href="login.html">去注册</a></div>
         <div class="sp-cart"><a href="shopcart.html">购物车</a><span>2</span></div>
       </div>
     </div>
