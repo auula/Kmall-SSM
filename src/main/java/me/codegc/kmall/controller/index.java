@@ -22,9 +22,9 @@ public class index {
 		return "index";
 	}
 	
-	@GetMapping("/time")
+	@GetMapping("/now/#/time")
 	@ResponseBody
-	public String time() {
+	public String now_date() {
 		return new Date().toLocaleString().toString();
 	}
 }
