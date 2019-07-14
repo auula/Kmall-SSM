@@ -119,8 +119,8 @@
 												<a href="javascript:;"><img src="${hot.getImage()}"></a>
 												<div class="title">${hot.getTitle()}</div>
 												<div class="price">
-													<span>${hot.getTypeId()}</span>
-													<del>${hot.getPrice()}</del>
+										
+													<span>${hot.getPrice()}RMB</span>
 												</div>
 											</div>
 										</c:forEach>
