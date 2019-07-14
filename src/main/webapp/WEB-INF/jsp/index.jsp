@@ -13,8 +13,7 @@
 <title>Kmall商城</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=basePath%>/static/css/main.css">
-<link rel="stylesheet" type="text/css"
-	href="<%=basePath%>/static/css/layui.css">
+<link rel="stylesheet" type="text/css" href="<%=basePath%>/static/css/layui.css">
 <script type="text/javascript" src="<%=basePath%>/static/js/layui.js"></script>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -97,10 +96,6 @@
 						</div>
 					</div>
 				</div>
-
-
-
-
 			</div>
 			<div class="floors">
 				<div class="sk">
@@ -114,25 +109,25 @@
 							<div class="layui-carousel" id="test1">
 								<div carousel-item>
 									<div class="item-box">
-										<c:forEach items="${HOT}" var="hot" varStatus="i" begin="0" end="3">
+										<c:forEach items="${HOT}" var="hot" varStatus="i" begin="0"
+											end="3">
 											<div class="item">
 												<a href="javascript:;"><img src="${hot.getImage()}"></a>
 												<div class="title">${hot.getTitle()}</div>
 												<div class="price">
-										
-													<span>${hot.getPrice()}RMB</span>
+													<span>${hot.getPrice()}</span>¥
 												</div>
 											</div>
 										</c:forEach>
 									</div>
 									<div class="item-box">
-										<c:forEach items="${HOT}" var="hot" varStatus="i" begin="4" end="7">
+										<c:forEach items="${HOT}" var="hot" varStatus="i" begin="4"
+											end="7">
 											<div class="item">
 												<a href="javascript:;"><img src="${hot.getImage()}"></a>
 												<div class="title">${hot.getTitle()}</div>
 												<div class="price">
-													<span>${hot.getTypeId()}</span>
-													<del>${hot.getPrice()}</del>
+													<span>${hot.getPrice()}</span>¥
 												</div>
 											</div>
 										</c:forEach>
@@ -149,119 +144,11 @@
 
 
 
-			<div class="hot-recommend-con">
-				<div class="hot-con1 w1200 layui-clear">
-					<div class="item">
-						<h4>热销推荐</h4>
-						<div class="big-img">
-							<a href="javascript:;"><img
-								src="<%=basePath%>/static/img/hot1.png"></a>
-						</div>
-						<div class="small-img">
-							<a href="javascript:;"><img
-								src="<%=basePath%>/static/img/hot2.png" alt=""></a>
-						</div>
-					</div>
-					<div class="item">
-						<div class="top-img">
-							<a href="javascript:;"><img
-								src="<%=basePath%>/static/img/hot5.jpg"></a>
-						</div>
-						<div class="bottom-img">
-							<a href="javascript:;"><img
-								src="<%=basePath%>/static/img/hot6.jpg"></a> <a
-								class="baby-cream" href="javascript:;"><img
-								src="<%=basePath%>/static/img/hot7.jpg"></a>
-						</div>
-					</div>
-					<div class="item item1 margin0 padding0">
-						<a href="javascript:;"><img
-							src="<%=basePath%>/static/img/hot8.jpg"></a> <a
-							href="javascript:;"><img class="btm-img"
-							src="<%=basePath%>/static/img/hot9.jpg"></a>
-					</div>
-				</div>
-			</div>
 
 
 
-			<div class="product-cont w1200" id="product-cont">
-				<div class="product-item product-item1 layui-clear">
-					<div class="left-title">
-						<h4>
-							<i>1F</i>
-						</h4>
-						<img src="<%=basePath%>/static/img/icon_gou.png">
-						<h5>宝宝服饰</h5>
-					</div>
-					<div class="right-cont">
-						<a href="javascript:;" class="top-img"><img
-							src="<%=basePath%>/static/img/img12.jpg" alt=""></a>
-						<div class="img-box">
-							<a href="javascript:;"><img
-								src="<%=basePath%>/static/img/s_img7.jpg"></a> <a
-								href="javascript:;"><img
-								src="<%=basePath%>/static/img/s_img8.jpg"></a> <a
-								href="javascript:;"><img
-								src="<%=basePath%>/static/img/s_img9.jpg"></a> <a
-								href="javascript:;"><img
-								src="<%=basePath%>/static/img/s_img10.jpg"></a> <a
-								href="javascript:;"><img
-								src="<%=basePath%>/static/img/s_img11.jpg"></a>
-						</div>
-					</div>
-				</div>
-				<div class="product-item product-item2 layui-clear">
-					<div class="left-title">
-						<h4>
-							<i>2F</i>
-						</h4>
-						<img src="<%=basePath%>/static/img/icon_gou.png">
-						<h5>奶粉辅食</h5>
-					</div>
-					<div class="right-cont">
-						<a href="javascript:;" class="top-img"><img
-							src="<%=basePath%>/static/img/img12.jpg" alt=""></a>
-						<div class="img-box">
-							<a href="javascript:;"><img
-								src="<%=basePath%>/static/img/s_img7.jpg"></a> <a
-								href="javascript:;"><img
-								src="<%=basePath%>/static/img/s_img8.jpg"></a> <a
-								href="javascript:;"><img
-								src="<%=basePath%>/static/img/s_img9.jpg"></a> <a
-								href="javascript:;"><img
-								src="<%=basePath%>/static/img/s_img10.jpg"></a> <a
-								href="javascript:;"><img
-								src="<%=basePath%>/static/img/s_img11.jpg"></a>
-						</div>
-					</div>
-				</div>
-				<div class="product-item product-item3 layui-clear">
-					<div class="left-title">
-						<h4>
-							<i>3F</i>
-						</h4>
-						<img src="<%=basePath%>/static/img/icon_gou.png">
-						<h5>宝宝用品</h5>
-					</div>
-					<div class="right-cont">
-						<a href="javascript:;" class="top-img"><img
-							src="<%=basePath%>/static/img/img12.jpg" alt=""></a>
-						<div class="img-box">
-							<a href="javascript:;"><img
-								src="<%=basePath%>/static/img/s_img7.jpg"></a> <a
-								href="javascript:;"><img
-								src="<%=basePath%>/static/img/s_img8.jpg"></a> <a
-								href="javascript:;"><img
-								src="<%=basePath%>/static/img/s_img9.jpg"></a> <a
-								href="javascript:;"><img
-								src="<%=basePath%>/static/img/s_img10.jpg"></a> <a
-								href="javascript:;"><img
-								src="<%=basePath%>/static/img/s_img11.jpg"></a>
-						</div>
-					</div>
-				</div>
-			</div>
+
+
 
 			<div class="product-list-box" id="product-list-box">
 				<div class="product-list-cont w1200">
@@ -433,7 +320,6 @@
 				</div>
 			</div>
 		</div>
-
 		<div class="footer">
 			<div class="ng-promise-box">
 				<div class="ng-promise w1200">
@@ -451,10 +337,11 @@
 					<span>|</span> <a href="javascript:;">母婴资讯</a> <span>|</span> <a
 						href="javascript:;">关于货源</a>
 				</p>
-				<p class="coty">母婴商城版权所有 &copy; 2012-2020</p>
+				<p class="coty">母婴商城版权所有 © 2012-2020</p>
 			</div>
 		</div>
-		<script type="text/javascript">
+</body>
+<script type="text/javascript">
 
 layui.config({
     base: '<%=basePath%>/static/js/' //你存放新模块的目录，注意，不是layui的模块目录
@@ -496,5 +383,4 @@ layui.config({
 
 		});
 	</script>
-</body>
 </html>
