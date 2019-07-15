@@ -117,19 +117,15 @@
 
 	<jsp:include page="./public/footer.jsp"></jsp:include>
 	<script type="text/javascript">
-   layui.config({
+    layui.config({
       base: '<%=basePath%>/static/js/util'
 		}).use([ 'jquery', 'form' ], function() {
 			var $ = layui.$, form = layui.form;
 		})
 		$(function(){
         $('.code-img').click(function () { 
-            $(this).attr('src', "<%=basePath%>
-		/captcha/img?"
-														+ Math
-																.floor(Math
-																		.random() * 99999999));
-							})
+            $(this).attr('src', "<%=basePath%>/captcha/img?"+ Math.floor(Math.random() * 99999999));
+		   })
 		})
 	</script>
 
