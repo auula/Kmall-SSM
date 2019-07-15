@@ -21,11 +21,13 @@
 						<!-- 验证码图片宽度 -->
 						<prop key="kaptcha.image.width">118</prop>
 						<!-- 验证码图片高度 -->
-						<prop key="kaptcha.image.height">48</prop>
+						<prop key="kaptcha.image.height">46</prop>
 						<!-- 验证码文本字符大小 -->
 						<prop key="kaptcha.textproducer.font.size">38</prop>
+						<!-- kaptcha.textproducer.char.string   验证码文本字符内容范围 -->
+						<prop key="kaptcha.textproducer.char.string">123456789ABXWHTMKF</prop>
 						<!-- session中存放验证码的key键 -->
-						<prop key="kaptcha.session.key">code</prop>
+						<prop key="kaptcha.session.key">_captcha</prop>
 						<!-- 验证码噪点颜色 -->
 						<prop key="kaptcha.noise.color">white</prop>
 						<!-- 验证码文本字符间距 -->
