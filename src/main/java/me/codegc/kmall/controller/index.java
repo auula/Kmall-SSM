@@ -28,11 +28,12 @@ public class index {
 	HttpServletRequest request;
 	@Autowired
 	HttpServletResponse response;
+	
 	private static final Logger logger = LogManager.getLogger(index.class);
 
 	@RequestMapping(method = RequestMethod.GET, value = { "/", "index.html" })
 	public String indexView() {
-		request.setAttribute("HOT",gm.getHotspotData(8));
+		request.setAttribute("HOT", gm.getHotspotData(8));
 		request.setAttribute("Rlist", gm.getRecommended(10));
 		logger.info("welcome.html");
 		return "welcome";

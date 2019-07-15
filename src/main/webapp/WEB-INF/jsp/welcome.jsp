@@ -6,8 +6,12 @@
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
 			+ path;
 %>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kmall商城</title>
 <jsp:include page="./public/head.jsp"></jsp:include>
-<body id="list-cont" >
+<body id="list-cont">
 	<div class="site-nav-bg">
 		<div class="site-nav w1200">
 			<p class="sn-back-home">
@@ -23,8 +27,6 @@
 			</div>
 		</div>
 	</div>
-
-
 	<div class="header">
 		<div class="headerLayout w1200">
 			<div class="headerCon">
@@ -47,7 +49,6 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="content">
 		<div class="main-nav">
 			<div class="inner-cont0">
@@ -65,28 +66,36 @@
 				<div class="category-type">
 					<h3>全部分类</h3>
 				</div>
-				
 			</div>
 			<div class="category-banner" style="background: #fff;">
 				<div class="w1200">
 					<div class="layui-carousel" id="bannerList" lay-filter="bannerList">
 						<div carousel-item="">
-							<div><img src="https://i.loli.net/2019/07/14/5d2b1477e20a499370.png"></div>
-							<div><img src="https://i.loli.net/2019/07/14/5d2b138155e9c43051.png"></div>
-							<div><img src="https://i.loli.net/2019/07/14/5d2b1bd09c26822458.png"></div>
-							<div><img src="https://i.loli.net/2019/07/14/5d2b1bd0af55693634.png"></div>
-							<div><img src="https://i.loli.net/2019/07/14/5d2b1bd0c3f7a63864.png"></div>
-							<div><img src="https://i.loli.net/2019/07/14/5d2b1bd0d4be558067.png"></div>
+							<div>
+								<img src="https://i.loli.net/2019/07/14/5d2b1477e20a499370.png">
+							</div>
+							<div>
+								<img src="https://i.loli.net/2019/07/14/5d2b138155e9c43051.png">
+							</div>
+							<div>
+								<img src="https://i.loli.net/2019/07/14/5d2b1bd09c26822458.png">
+							</div>
+							<div>
+								<img src="https://i.loli.net/2019/07/14/5d2b1bd0af55693634.png">
+							</div>
+							<div>
+								<img src="https://i.loli.net/2019/07/14/5d2b1bd0c3f7a63864.png">
+							</div>
+							<div>
+								<img src="https://i.loli.net/2019/07/14/5d2b1bd0d4be558067.png">
+							</div>
 						</div>
 					</div>
 					<!-- <img src="https://i.loli.net/2019/07/14/5d2b138155e9c43051.png"> -->
 					<!-- <img src="https://i.loli.net/2019/07/14/5d2b1477e20a499370.png"> -->
 				</div>
 			</div>
-
 		</div>
-
-
 		<div class="floors">
 			<div class="sk">
 				<div class="sk_inner w1200">
@@ -128,16 +137,6 @@
 				</div>
 			</div>
 		</div>
-
-
-
-
-
-
-
-
-
-
 		<div class="product-cont w1200" id="product-cont"></div>
 
 		<div class="product-list-box" id="product-list-box">
@@ -157,29 +156,10 @@
 		</div>
 	</div>
 
-	<div class="footer">
-		<div class="ng-promise-box">
-			<div class="ng-promise w1200">
-				<p class="text">
-					<a class="icon1" href="javascript:;">7天无理由退换货</a> <a class="icon2"
-						href="javascript:;">满99元全场免邮</a> <a class="icon3"
-						style="margin-right: 0" href="javascript:;">100%品质保证</a>
-				</p>
-			</div>
-		</div>
-		<div class="mod_help w1200">
-			<p>
-				<a href="javascript:;">关于我们</a> <span>|</span> <a
-					href="javascript:;">帮助中心</a> <span>|</span> <a href="javascript:;">售后服务</a>
-				<span>|</span> <a href="javascript:;">母婴资讯</a> <span>|</span> <a
-					href="javascript:;">关于货源</a>
-			</p>
-			<p class="coty">KMALL商城版权所有 &copy; 2012-2020</p>
-		</div>
-	</div>
+	<jsp:include page="./public/footer.jsp"></jsp:include>
 	<script type="text/javascript">
 		layui.config({
-			base : '<%=basePath%>/static/js/'
+			base : "<%=basePath%>/static/js/"
 		}).use([ 'mm', 'carousel' ], function() {
 			var carousel = layui.carousel, mm = layui.mm;
 			var option = {
