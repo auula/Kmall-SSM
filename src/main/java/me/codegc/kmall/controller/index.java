@@ -29,20 +29,19 @@ public class index {
 	@Autowired
 	HttpServletResponse response;
 	
-	private static final Logger logger = LogManager.getLogger(index.class);
+	private static final Logger log = LogManager.getLogger(index.class);
 
 	@RequestMapping(method = RequestMethod.GET, value = { "/", "index.html" })
 	public String indexView() {
 		request.setAttribute("HOT", gm.getHotspotData(8));
 		request.setAttribute("Rlist", gm.getRecommended(10));
-		logger.info("welcome.html");
 		return "welcome";
 	}
 
 	@GetMapping("/list")
 	@ResponseBody
 	public Response<List> Hot() {
-		return Response.build(ResponseCode.normal, gm.getHotspotData(2));
+		return Response.build(ResponseCode.normal, gm.getHotspotData(10));
 	}
 
 }

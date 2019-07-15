@@ -19,3 +19,4 @@
 		<p class="coty">KMALL商城版权所有 &copy; 2012-2020</p>
 	</div>
 </div>
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
