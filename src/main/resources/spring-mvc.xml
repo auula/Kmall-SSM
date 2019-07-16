@@ -16,7 +16,7 @@
 	<!--配置注解形式的处理器映射器和处理器适配器-->
     <mvc:annotation-driven></mvc:annotation-driven>
     <!--配置包扫描-->
-    <context:component-scan base-package="me.codegc.kmall.controller"></context:component-scan>
+    <context:component-scan base-package="me.codegc.kmall"></context:component-scan>
 
     <!--视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

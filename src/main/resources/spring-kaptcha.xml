@@ -25,7 +25,7 @@
 						<!-- 验证码文本字符大小 -->
 						<prop key="kaptcha.textproducer.font.size">38</prop>
 						<!-- kaptcha.textproducer.char.string   验证码文本字符内容范围 -->
-						<prop key="kaptcha.textproducer.char.string">123456789ABXWHTMKF</prop>
+						<prop key="kaptcha.textproducer.char.string">23456789ABXWHTMKF</prop>
 						<!-- session中存放验证码的key键 -->
 						<prop key="kaptcha.session.key">_captcha</prop>
 						<!-- 验证码噪点颜色 -->
