@@ -32,10 +32,12 @@
 	<div class="header">
 		<div class="headerLayout w1200">
 			<div class="headerCon">
-				<a href="/" title="Kmall商城"> <img
-					style="width: 130px; height: 48px;"
-					src="https://i.loli.net/2019/07/08/5d22c114497c397275.png">
-				</a>
+				<h1 class="mallLogo" style="margin-top: 20px;">
+					<a href="/" title="Kmall商城"> <img
+						style="width: 130px; height: 48px;"
+						src="https://i.loli.net/2019/07/08/5d22c114497c397275.png">
+					</a>
+				</h1>
 				<div class="mallSearch">
 					<form action="" class="layui-form" novalidate>
 						<input type="text" name="title" required lay-verify="required"
@@ -64,8 +66,8 @@
 		</div>
 		<div class="data-cont-wrap w1200">
 			<div class="crumb">
-				<a href="javascript:;">首页</a> <span>></span> <a href="javascript:;">所有商品</a>
-				<span>></span> <a href="javascript:;">产品详情</a>
+				<a href="javascript:;">产品详情</a> <span>></span> <a href="javascript:;">电子产品</a>
+				<span>></span> <a href="javascript:;">笔记本</a>
 			</div>
 			<div class="product-intro layui-clear">
 				<div class="preview-wrap">

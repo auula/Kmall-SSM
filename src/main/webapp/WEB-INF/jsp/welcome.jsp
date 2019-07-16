@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="java.util.Date"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -111,7 +112,7 @@
 									<c:forEach items="${HOT}" var="hot" varStatus="i" begin="0"
 										end="3">
 										<div class="item">
-											<a href="javascript:;"><img src="${hot.getImage()}"></a>
+											<a href="<%=basePath%>/goods/info/${hot.getId()}?_t=<%=new Date().getTime()%>"><img src="${hot.getImage()}"></a>
 											<div class="title" style="text-align: center;">${hot.getTitle()}</div>
 											<div class="price" style="text-align: center;">
 												<span>¥${hot.getPrice()}</span>
@@ -123,7 +124,7 @@
 									<c:forEach items="${HOT}" var="hot" varStatus="i" begin="4"
 										end="7">
 										<div class="item">
-											<a href="javascript:;"><img src="${hot.getImage()}"></a>
+											<a href="<%=basePath%>/goods/info/${hot.getId()}?_t=<%=new Date().getTime()%>"><img src="${hot.getImage()}"></a>
 											<div class="title" style="text-align: center;">${hot.getTitle()}</div>
 											<div class="price" style="text-align: center;">
 												<span>¥${hot.getPrice()}</span>
@@ -145,7 +146,7 @@
 				<div class="product-item-box layui-clear">
 					<c:forEach items="${Rlist}" var="r" varStatus="i" begin="0" end="9">
 						<div class="list-item">
-							<a href="javascript:;"><img
+							<a href="<%=basePath%>/goods/info/${r.getId()}?_t=<%=new Date().getTime()%>"><img
 								style="width: 160px; height: 160px;" src="${r.getImage()}"></a>
 							<p style="text-align: center;">${r.getTitle()}</p>
 							<span>￥${r.getPrice()}</span>
