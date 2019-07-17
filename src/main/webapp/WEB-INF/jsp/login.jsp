@@ -19,10 +19,10 @@
 			</p>
 			<div class="sn-quick-menu">
 				<div class="login">
-					<a href="register.html">去注册</a>
+					<a href="<%=basePath%>/register.html">去注册</a>
 				</div>
 				<div class="sp-cart">
-					<a href="shopcart.html">购物车</a><span>2</span>
+					<a href="<%=basePath%>/shopCart/list">购物车</a>
 				</div>
 			</div>
 		</div>

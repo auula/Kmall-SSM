@@ -23,7 +23,7 @@
 					<a href="<%=basePath%>/login.html">登录</a>
 				</div>
 				<div class="sp-cart">
-					<a href="<%=basePath%>/shopcart.html">购物车</a><span>2</span>
+					<a href="<%=basePath%>/shopCart/list">购物车</a>
 				</div>
 			</div>
 		</div>
