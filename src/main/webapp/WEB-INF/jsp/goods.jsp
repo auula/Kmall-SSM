@@ -83,7 +83,7 @@
 						<div class="summary">
 							<p class="reference">
 								<span>参考价</span>
-								<del>￥${ginfo.getPrice()*2.8}</del>
+								<del>￥${ginfo.getPrice()*2}</del>
 							</p>
 							<p class="activity">
 								<span>活动价</span><strong class="price"><i>￥</i>${ginfo.getPrice()}</strong>
@@ -106,7 +106,7 @@
 							</div>
 						</div>
 						<div class="choose-btns">
-							<button class="layui-btn layui-btn-primary purchase-btn">立刻购买</button>
+							<!-- <button class="layui-btn layui-btn-primary purchase-btn">立刻购买</button> -->
 							<button class="layui-btn  layui-btn-danger car-btn">
 								<i class="layui-icon layui-icon-cart-simple"></i>加入购物车
 							</button>

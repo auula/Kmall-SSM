@@ -77,10 +77,9 @@
 				<div class="th th-chk">
 					<div class="select-all">
 						<div class="cart-checkbox">
-							<input class="check-all check" id="allCheckked" type="checkbox"
-								value="true">
+							
 						</div>
-						<label>&nbsp;&nbsp;全选</label>
+						<label>&nbsp;&nbsp;</label>
 					</div>
 				</div>
 				<div class="th th-item">
@@ -101,75 +100,55 @@
 			</div>
 			<c:choose>
 				<c:when test="${_cart.goodsMap.size()>0}">
-					<div class="OrderList">
-						<div class="order-content" id="list-cont">
-							<ul class="item-content layui-clear">
-								<li class="th th-chk">
-									<div class="select-all">
-										<div class="cart-checkbox">
-											<input class="CheckBoxShop check" id="" type="checkbox"
-												num="all" name="select-all" value="true">
-										</div>
-									</div>
-								</li>
-
-								<c:forEach items="${_cart.goodsMap}" var="gs">
+					<c:forEach items="${_cart.goodsMap}" var="gs">
+						<div class="OrderList">
+							<div class="order-content" id="list-cont">
+								<ul class="item-content layui-clear">
+									<li class="th th-chk">&nbsp;&nbsp;</li>
 									<li class="th th-item">
 										<div class="item-cont">
-											<a href="javascript:;"><img src="${gs.value.getImage()}"
-												alt=""></a>
+											<a href="javascript:;"><img
+												src="${gs.value.gs.getImage()}" alt=""></a>
 											<div class="text">
-												<div class="title">${gs.value.getTitle()}</div>
-												<p>${gs.value.getSellPoint()}</p>
+												<div class="title">${gs.value.gs.getTitle()}</div>
+												<p>${gs.value.gs.getSellPoint()}</p>
 											</div>
 										</div>
 									</li>
-									<li class="th th-price"><span class="th-su">${gs.value.getPrice()}</span></li>
+									<li class="th th-price"><span class="th-su">${gs.value.gs.getPrice()}</span>
+									</li>
 									<li class="th th-amount">
 										<div class="box-btn layui-clear">
 											<div class="less layui-btn">-</div>
-											<input class="Quantity-input" type="text" name="" value="1"
-												disabled="disabled">
+											<input class="Quantity-input" type="" name=""
+												value="${gs.value.getQuantity()}" disabled="disabled">
 											<div class="add layui-btn">+</div>
 										</div>
 									</li>
-									<li class="th th-sum"><span class="sum"></span></li>
+									<li class="th th-sum"><span class="sum">${gs.value.gs.getPrice()}</span></li>
 									<li class="th th-op"><span class="dele-btn">删除</span></li>
-								</c:forEach>
-							</ul>
+								</ul>
 
+
+							</div>
 						</div>
-					</div>
+
+					</c:forEach>
 				</c:when>
 
 				<c:otherwise>
-						<h1 style="text-align: center;color: red;">购物车空空如也..请你先加入商品到购物车··</h1>
+					<h1 style="text-align: center; color: red;">购物车空空如也..请你先加入商品到购物车··</h1>
 				</c:otherwise>
 			</c:choose>
 
-
-
-
 			<div class="FloatBarHolder layui-clear">
-				<div class="th th-chk">
-					<div class="select-all">
-						<div class="cart-checkbox">
-							<input class="check-all check" id="" name="select-all"
-								type="checkbox" value="true">
-						</div>
-						<label>&nbsp;&nbsp;已选<span class="Selected-pieces">0</span>件
-						</label>
-					</div>
-				</div>
-				<div class="th batch-deletion">
-					<span class="batch-dele-btn">批量删除</span>
-				</div>
+
 				<div class="th Settlement">
 					<button class="layui-btn">结算</button>
 				</div>
 				<div class="th total">
 					<p>
-						应付：<span class="pieces-total">0</span>
+						应付：<span>${_cart.getPrice()}</span>
 					</p>
 				</div>
 			</div>
@@ -177,16 +156,7 @@
 	</div>
 
 	<script type="text/javascript">
-		layui.config({
-			base : '<%=basePath%>
-		/static/js/' //你存放新模块的目录，注意，不是layui的模块目录
-				})
-				.use(
-						[ 'mm', 'jquery', 'element', 'car' ],
-						function() {
-							var mm = layui.mm, $ = layui.$, element = layui.element, car = layui.car;
-							car.init()
-						});
+		
 	</script>
 </body>
 </html>

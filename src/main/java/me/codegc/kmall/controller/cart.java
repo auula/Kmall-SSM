@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import me.codegc.kmall.dao.goodsMapper;
+import me.codegc.kmall.pojo.goods;
 import me.codegc.kmall.pojo.shopCart;
 
 /**
@@ -40,17 +41,26 @@ public class cart {
 
 	@GetMapping("/add")
 	public String add(@RequestParam String id) {
+		shopCart cart = (shopCart) request.getSession().getAttribute("_cart");
+		// 如果当前用户还没有点击过购买的商品，那么是用户的购物车是空的
+		if (cart == null) {
+			cart = new shopCart();
+			request.getSession().setAttribute("_cart",cart);
+		}
+		goods g = gm.selectByPrimaryKey(Long.valueOf(id));
+		cart.addGoods(g);
+		request.getSession().setAttribute("_cart",cart);
 		return "shopCart";
 	}
 
 	@GetMapping("/list")
 	public String list() {
-		//把用户想要买的商品放到购物车上
-        //用户不单单只有一个，要让购物车上只为当前的用户服务，就需要用到会话跟踪技术了
+		// 把用户想要买的商品放到购物车上
+		// 用户不单单只有一个，要让购物车上只为当前的用户服务，就需要用到会话跟踪技术了
 		HttpSession session = request.getSession();
-		shopCart cart = (shopCart)session.getAttribute("_cart");
-		//如果当前用户还没有点击过购买的商品，那么是用户的购物车是空的
-		if(cart == null) {
+		shopCart cart = (shopCart) session.getAttribute("_cart");
+		// 如果当前用户还没有点击过购买的商品，那么是用户的购物车是空的
+		if (cart == null) {
 			session.setAttribute("_cart", new shopCart());
 		}
 		return "shopCart";

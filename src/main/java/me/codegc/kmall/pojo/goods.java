@@ -13,7 +13,14 @@ public class goods {
 
     private Integer num;
 
-    private String image;
+    @Override
+	public String toString() {
+		return "goods [id=" + id + ", title=" + title + ", sellPoint=" + sellPoint + ", price=" + price + ", num=" + num
+				+ ", image=" + image + ", typeId=" + typeId + ", status=" + status + ", created=" + created
+				+ ", updated=" + updated + "]";
+	}
+
+	private String image;
 
     private Long typeId;
 

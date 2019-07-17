@@ -20,7 +20,7 @@ public class shopCart {
 	// 代表着购物车的总价
 	private double price;
 
-	// 把购物项（用户传递进来的书籍）加入到购物车里边去，也应该是购物车的功能
+	// 把购物项（用户传递进商品）加入到购物车里边去，也应该是购物车的功能
 	public void addGoods(goods gs) {
 		// 获取得到购物项
 		CartItem cartItem = goodsMap.get(String.valueOf(gs.getId()));
