@@ -142,8 +142,7 @@
 			/* console.log(result.msg); */
 			layer.msg(result.msg);
 		})
-	}
-		
+	}		
 	</script>
 
 </body>

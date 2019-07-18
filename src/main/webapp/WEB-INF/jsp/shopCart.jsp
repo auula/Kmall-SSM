@@ -76,9 +76,7 @@
 			<div class="cart-table-th">
 				<div class="th th-chk">
 					<div class="select-all">
-						<div class="cart-checkbox">
-							
-						</div>
+						<div class="cart-checkbox"></div>
 						<label>&nbsp;&nbsp;</label>
 					</div>
 				</div>
@@ -126,7 +124,8 @@
 										</div>
 									</li>
 									<li class="th th-sum"><span class="sum">${gs.value.gs.getPrice()}</span></li>
-									<li class="th th-op"><span class="dele-btn">删除</span></li>
+									<li class="th th-op"><span class="dele-btn"
+										onclick="delShopCart(${gs.value.gs.getId()})">删除</span></li>
 								</ul>
 
 
@@ -156,7 +155,30 @@
 	</div>
 	<jsp:include page="./public/footer.jsp"></jsp:include>
 	<script type="text/javascript">
-		
+	var layer = layui.config({
+		base :  "<%=basePath%>/static/js/" //你存放新模块的目录，注意，不是layui的模块目录
+	}).use([ 'mm', 'jquery','layer' ], function() {
+		var mm = layui.mm, $ = layui.$;
+	});
+	function delShopCart(gid){
+		layer.msg("正在删除商品.");
+		$.post("<%=basePath%>/shopCart/del",{
+				"id" : gid
+			},function(result) {
+				if(result.code == 2000){
+					reloadView()
+				}
+				console.log(result.msg)
+			})
+		}
+	
+	function reloadView(){
+		setTimeout(function (){
+			window.location.href ='<%=basePath%>/shopCart/list'
+			/* window.location.reload(); */
+		}, 2000);
+	}
+	
 	</script>
 </body>
 </html>

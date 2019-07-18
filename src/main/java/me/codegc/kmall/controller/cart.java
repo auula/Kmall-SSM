@@ -42,9 +42,10 @@ public class cart {
 	@Autowired
 	HttpServletResponse response;
 
+	@SuppressWarnings("unchecked")
 	@ResponseBody
 	@PostMapping("/add")
-	public Response<String> add(@RequestParam String id) {
+	public Response<String> add(@RequestParam(required=true) String id) {
 		shopCart cart = (shopCart) request.getSession().getAttribute("_cart");
 		// 如果当前用户还没有点击过购买的商品，那么是用户的购物车是空的
 		if (cart == null) {
@@ -56,7 +57,6 @@ public class cart {
 		request.getSession().setAttribute("_cart",cart);
 		return Response.build(ResponseCode.normal, "添加成功!本商品已经有"+cart.getGoodsMap().get(id).getQuantity()+"件在购物车中.");
 	}
-
 	@GetMapping("/list")
 	public String list() {
 		// 把用户想要买的商品放到购物车上
@@ -70,8 +70,20 @@ public class cart {
 		return "shopCart";
 	}
 
+	@SuppressWarnings("unchecked")
+    @ResponseBody
 	@PostMapping("/del")
-	public String del(@RequestParam String id) {
-		return "shopCart";
+	public Response<String> del(@RequestParam(required=true) String id) {
+		shopCart cart = (shopCart) request.getSession().getAttribute("_cart");
+		// 如果当前用户还没有点击过购买的商品，那么是用户的购物车是空的
+		if (cart == null) {
+			cart = new shopCart();
+			request.getSession().setAttribute("_cart",cart);
+		}else {
+			//移除购物车里面的商品
+			cart.getGoodsMap().remove(id);
+			request.getSession().setAttribute("_cart",cart);
+		}
+		return Response.build(ResponseCode.normal,"删除商品成功.");
 	}
 }
