@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import me.codegc.kmall.dao.goodsMapper;
+import me.codegc.kmall.enume.ResponseCode;
+import me.codegc.kmall.pojo.Response;
 import me.codegc.kmall.pojo.goods;
 import me.codegc.kmall.pojo.shopCart;
 
@@ -39,8 +42,9 @@ public class cart {
 	@Autowired
 	HttpServletResponse response;
 
-	@GetMapping("/add")
-	public String add(@RequestParam String id) {
+	@ResponseBody
+	@PostMapping("/add")
+	public Response<String> add(@RequestParam String id) {
 		shopCart cart = (shopCart) request.getSession().getAttribute("_cart");
 		// 如果当前用户还没有点击过购买的商品，那么是用户的购物车是空的
 		if (cart == null) {
@@ -50,7 +54,7 @@ public class cart {
 		goods g = gm.selectByPrimaryKey(Long.valueOf(id));
 		cart.addGoods(g);
 		request.getSession().setAttribute("_cart",cart);
-		return "shopCart";
+		return Response.build(ResponseCode.normal, "添加成功!本商品已经有"+cart.getGoodsMap().get(id).getQuantity()+"件在购物车中.");
 	}
 
 	@GetMapping("/list")

@@ -66,19 +66,19 @@
 		</div>
 		<div class="data-cont-wrap w1200">
 			<div class="crumb">
-				<a href="javascript:;">产品详情</a> <span>></span> <a href="javascript:;">电子产品</a>
-				<span>></span> <a href="javascript:;">笔记本</a>
+				<a href="javascript:;">产品详情</a> <span>></span> <a
+					href="javascript:;">电子产品</a> <span>></span> <a href="javascript:;">笔记本</a>
 			</div>
 			<div class="product-intro layui-clear">
 				<div class="preview-wrap">
-					<a href="javascript:;"><img style="width: 400px;height: 400px;"
-						src="${ginfo.getImage()}"></a>
+					<a href="javascript:;"><img
+						style="width: 400px; height: 400px;" src="${ginfo.getImage()}"></a>
 				</div>
 				<div class="itemInfo-wrap">
 					<div class="itemInfo">
 						<div class="title">
 							<h4>${ginfo.getSellPoint()}</h4>
-		
+
 						</div>
 						<div class="summary">
 							<p class="reference">
@@ -93,49 +93,57 @@
 							</p>
 						</div>
 						<div class="choose-attrs">
-							
+
 							<div class="number layui-clear">
-								<span class="title">数&nbsp;&nbsp;&nbsp;&nbsp;量</span>
+								<!-- <span class="title">数&nbsp;&nbsp;&nbsp;&nbsp;量</span>
 								<div class="number-cont">
 									<span class="cut btn">-</span><input
 										onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"
 										onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"
 										maxlength="4" type="" name="" value="1"><span
 										class="add btn">+</span>
-								</div>
+								</div>  -->
 							</div>
 						</div>
 						<div class="choose-btns">
 							<!-- <button class="layui-btn layui-btn-primary purchase-btn">立刻购买</button> -->
-							<button class="layui-btn  layui-btn-danger car-btn">
+							<button class="layui-btn  layui-btn-danger car-btn"
+								onclick="addShopCart(${ginfo.getId()})">
 								<i class="layui-icon layui-icon-cart-simple"></i>加入购物车
 							</button>
 						</div>
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
 	<jsp:include page="./public/footer.jsp"></jsp:include>
 	<script type="text/javascript">
-		layui.config({
-			base :  "<%=basePath%>/static/js/" //你存放新模块的目录，注意，不是layui的模块目录
-		}).use([ 'mm', 'jquery' ], function() {
-			var mm = layui.mm, $ = layui.$;
-			var cur = $('.number-cont input').val();
-			$('.number-cont .btn').on('click', function() {
-				if ($(this).hasClass('add')) {
-					cur++;
-				} else {
-					if (cur > 1) {
-						cur--;
-					}
+	var layer = layui.config({
+		base :  "<%=basePath%>/static/js/" //你存放新模块的目录，注意，不是layui的模块目录
+	}).use([ 'mm', 'jquery','layer' ], function() {
+		var mm = layui.mm, $ = layui.$;
+		var cur = $('.number-cont input').val();
+		$('.number-cont .btn').on('click', function() {
+			if ($(this).hasClass('add')) {
+				cur++;
+			} else {
+				if (cur > 1) {
+					cur--;
 				}
-				$('.number-cont input').val(cur)
-			})
-
-		});
+			}
+			$('.number-cont input').val(cur)
+		})
+		
+	});
+	function addShopCart(gid){
+		$.post("<%=basePath%>/shopCart/add",{"id":gid},function(result){
+			/* console.log(result.msg); */
+			layer.msg(result.msg);
+		})
+	}
+		
 	</script>
 
 </body>
