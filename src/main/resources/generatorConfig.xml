@@ -7,7 +7,7 @@
 			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
 			<property name="suppressAllComments" value="true" />
 		</commentGenerator>
-		<!-- 数据库链接URL、用户名、密码 -->
+		<!-- 数据库链接URL、用户名、密码 (虽然密码上传到GitHub了，但是数据库服务器设置了白名单IP)-->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
 			connectionURL="jdbc:mysql://120.79.15.136:3306/kmall" userId="kmall"
 			password="123456">
